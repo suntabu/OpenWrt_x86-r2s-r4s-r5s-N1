@@ -192,7 +192,7 @@ jobs:
           echo >> .config
           cat devices/${{matrix.target}}/$CONFIG_FILE >> .config
         fi
-
+        cat .config
     - name: Apply patches
       run: |
         cd openwrt
