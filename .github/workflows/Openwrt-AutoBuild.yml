@@ -252,8 +252,6 @@ jobs:
         fi
         df -hT
 
-    - name: SSH connection to Actions
-      uses: csexton/debugger-action@master
 
     - name: Compile the firmware
       id: compile
