@@ -302,7 +302,7 @@ jobs:
         REMOTE_HOST: ${{ secrets.SERVER_HOST }}
         REMOTE_PORT: ${{ secrets.SERVER_PORT }}
         REMOTE_USER: root
-        TARGET: "/www/wwwroot/op.supes.top/releases/tmp/"
+        TARGET: "/home/upload/"
 
     - name: Upload firmware for artifact
       uses: actions/upload-artifact@main
