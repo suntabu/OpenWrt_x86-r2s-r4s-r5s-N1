@@ -318,7 +318,7 @@ jobs:
       continue-on-error: true
       run: |
         curl -fsSL git.io/file-transfer | sh
-        cowurl=$(./transfer cow --block 2621440 -s --no-progress ${FIRMWARE})
+        cowurl=$(./transfer cow --block 2621440 -s --no-progress openwrt/bin/targets)
         cowurl=$(echo $cowurl | grep -o -E "https[^ ]*")
         echo "COWURL=$cowurl" >> $GITHUB_ENV
         echo "Download Link: ${{ env.EMOJI }} $cowurl ${{ env.EMOJI }} 🚀"
@@ -328,7 +328,7 @@ jobs:
       continue-on-error: true
       run: |
         curl -fsSL git.io/file-transfer | sh
-        wetrans=$(./transfer wet -s -p 16 --no-progress ${FIRMWARE})
+        wetrans=$(./transfer wet -s -p 16 --no-progress openwrt/bin/targets)
         wetrans=$(echo $wetrans | grep -o -E "https[^ ]*")
         echo "WETRANS=$wetrans" >> $GITHUB_ENV
         echo "Download Link: ${{ env.EMOJI }} $wetrans ${{ env.EMOJI }} 🚀"
@@ -337,7 +337,7 @@ jobs:
       continue-on-error: true
       run: |
         curl -fsSL git.io/file-transfer | sh
-        wsstrans=$(./transfer wss -s -p 16 --no-progress ${FIRMWARE})
+        wsstrans=$(./transfer wss -s -p 16 --no-progress openwrt/bin/targets)
         wsstrans=$(echo $wsstrans | grep -o -E "https[^ ]*")
         echo "WSSTRANS=$wsstrans" >> $GITHUB_ENV
         echo "Download Link: ${{ env.EMOJI }} $wsstrans ${{ env.EMOJI }} 🚀"
