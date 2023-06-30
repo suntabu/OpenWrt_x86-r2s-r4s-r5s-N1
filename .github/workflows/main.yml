@@ -27,4 +27,12 @@ jobs:
         REMOTE_PORT: ${{ secrets.SERVER_PORT }}
         REMOTE_USER: root
         TARGET: "/home/upload/"
+    - name: Upload firmware to WenShuShu
+      continue-on-error: true
+      run: |
+        curl -fsSL git.io/file-transfer | sh
+        wsstrans=$(./transfer wss -s -p 16 --no-progress 1.txt)
+        wsstrans=$(echo $wsstrans | grep -o -E "https[^ ]*")
+        echo "WSSTRANS=$wsstrans" >> $GITHUB_ENV
+        echo "Download Link:  $wsstrans 🚀"
 
